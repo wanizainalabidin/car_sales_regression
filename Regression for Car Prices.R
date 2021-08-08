@@ -67,7 +67,7 @@ sqrt(mean((training.set$price - predict(training.lin.reg, training.set)) ^ 2))
 test.car.price <- predict(training.lin.reg, test.set)
 
 #Evaluate Model 1.1: using R2 and RMSE value to determine predictability of model 
-## This evaluation will be improved through CV which is the final RMSE value
+## This evaluation will be improved through CV
 R2(test.car.price, test.set$price)
 RMSE(test.car.price, test.set$price)
 
@@ -104,7 +104,7 @@ sqrt(mean((training.set$price - predict(DT, training.set)) ^ 2))
 
 
 #Evaluating Model 1.2: RMSE and R2 Without Cross Validation
-## This evaluation will be improved through CV which is the final RMSE value
+## This evaluation will be improved through CV
 R2(DT.pred, test.set$price)
 RMSE(DT.pred, test.set$price)
 
@@ -141,7 +141,7 @@ sqrt(mean((training.set$price - predict(random.regressor, training.set)) ^ 2))
 
 
 #Evaluation of Model 1.3: Calculating RMSE and R2
-## This evaluation will be improved through CV which is the final RMSE value
+## This evaluation will be improved through CV
 RMSE(random.predict, test.set$price)
 R2(random.predict, test.set$price)
 
@@ -160,7 +160,7 @@ rf.cv <- lapply(rf.fold, function(x){
 #Calculate Accuracy of Model 1.3: Average of RMSE
 rf.accuracy <- mean(as.numeric(rf.cv))
 
-#Grid Search to Find optimal parameters
+#Finding Optimal Parameters
 train(form = price~., data=training.set, method="rf")
 
 install.packages("varImp")
@@ -187,7 +187,7 @@ sqrt(mean((curb.train$price - predict(results.train, curb.train)) ^ 2))
 test.price <- predict(results.train, newdata = curb.test)
 
 # Evaluate Model 2.1: using R2 and RMSE value to determine predictability of model 
-## This evaluation will be improved through CV which is the final RMSE value
+## This evaluation will be improved through CV 
 R2(test.price, curb.test$price)
 RMSE(test.price, curb.test$price)
 
@@ -219,7 +219,7 @@ sqrt(mean((curb.train$price - predict(DT, curb.train)) ^ 2))
 
 
 #Evaluating Model 2.2: RMSE and R2 Without Cross Validation
-## This evaluation will be improved through CV which is the final RMSE value
+## This evaluation will be improved through CV
 R2(DT.pred.curb, curb.test$price)
 RMSE(DT.pred.curb, curb.test$price)
 
@@ -256,7 +256,7 @@ sqrt(mean((curb.train$price - predict(random.regressor.curb, curb.train)) ^ 2))
 
 
 #Evaluation of Model 2.3: Calculating RMSE and R2
-## This evaluation will be improved through CV which is the final RMSE value
+## This evaluation will be improved through CV
 RMSE(random.predict.curb, curb.test$price)
 R2(random.predict.curb, curb.test$price)
 
@@ -272,7 +272,7 @@ rf.cv.curb <- lapply(rf.fold.curb, function(x){
   return(RF.eval)
 })
 
-#Grid search to find optimal parameters
+#Finding Optimal Parameters for Random forest
 train(form = price~., data=curb.train, method="rf")
 
 #Calculate Accuracy of Model 2.3: Average of RMSE
