@@ -1,6 +1,23 @@
 # Welcome to my project on Car Prices 
 ### In this project, we are trying to predict the price of cars based on several independent variables. This stems from the company's (Geely Auto) intention of entering into the American market. 
 
+In order for us to get insights on which model is the best in predicting the price of cars, 3 regression models are used - linear, decision tree and random forest regression.
+
+We will use the following process throughout building the model: 
+
+  1)Data preprocessing
+  
+  2)Split Data
+  
+  3)Build model on the train set
+  
+  4)Apply model on the test set
+  
+  5)Evaluate Model performance
+  
+  6)Hyperparameters optimisation
+
+
 In order to do this, we will first do the following to set our working directory
 
 ```
