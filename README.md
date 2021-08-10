@@ -375,7 +375,7 @@ dt.accuracy.curb <- mean(as.numeric(dt.cv.curb))
 
 The last model that will be trained using the dataset will be the random forest
 
-We can start building the machine learning model throug the following code:
+We can start building the machine learning model through the following code:
  
  ```
  random.regressor.curb <- randomForest(x=curb.train[1:23],
@@ -425,7 +425,7 @@ rf.accuracy.curb <- mean(as.numeric(rf.cv.curb))
 
 ```
 
-As show above, the mtry was pegged at 12. This value is derived through hyperparameter optimisation by running the following code: 
+As shown above, the mtry was pegged at 12. This value is derived through hyperparameter optimisation by running the following code: 
 
 ```
 train(form = price~., data=curb.train, method="rf")
